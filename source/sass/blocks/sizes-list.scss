@@ -8,8 +8,12 @@
   margin-bottom: 15px;
 }
 
-.sizes-list li {
+.sizes-list__item {
   font-weight: 400;
   font-size: 18px;
   line-height: 36px;
+}
+
+.sizes-list__item--inactive {
+  color: $color-quartz;
 }

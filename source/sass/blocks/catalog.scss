@@ -5,3 +5,18 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
+.catalog--erotic p {
+  margin: 0;
+  padding: 60px 0;
+  color: $color-nero;
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+.catalog--inactive {
+  display: none;
+}

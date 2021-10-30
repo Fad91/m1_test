@@ -127,31 +127,34 @@
     <section class="catalog-section">
       <h2 class="catalog-section__title">Каталог</h2>
       <div class="catalog-section__buttons">
-        <button type="button" class="catalog-section__button catalog-section__button--active">Повседневные
+        <button type="button" class="catalog-section__button catalog-section__button--active" id="daily">Повседневные
           портупеи</button>
-        <button type="button" class="catalog-section__button">Эротические портупеи</button>
+        <button type="button" class="catalog-section__button" id="erotic">Эротические портупеи</button>
       </div>
       <ul class="catalog">
       </ul>
+      <div class="catalog--erotic catalog--inactive">
+        <p>На данный момент товаров нет в наличии, следите за обновлениями!</p>
+      </div>
     </section>
     <template id="card">
       <li class="catalog__item card">
-        <picture>
-          <source type="image/webp" srcset="img/peppy.webp 1x, img/peppy@2x.webp 2x">
-          <img class="card__img" src="img/peppy.png" width="300" height="250" srcset="img/peppy@2x.png 2x" alt="Логотип компании">
-        </picture>
+        <!-- <picture>
+          <source type="image/webp" srcset="img/peppy.webp 1x, img/peppy@2x.webp 2x"> -->
+          <img class="card__img" src="img/peppy.png" width="300" height="250" alt="Изображение товара">
+        
         <h3 class="card__title">Портупея "Пеппи"</h3>
         <ul class="sizes-list">
-          <li>XS</li>
-          <li>S</li>
-          <li>M</li>
-          <li>L</li>
-          <li>XL</li>
-          <li>XXL</li>
+          <li class="sizes-list__item" data-value="">XS</li>
+          <li class="sizes-list__item" data-value="">S</li>
+          <li class="sizes-list__item" data-value="">M</li>
+          <li class="sizes-list__item" data-value="">L</li>
+          <li class="sizes-list__item" data-value="">XL</li>
+          <li class="sizes-list__item" data-value="">XXL</li>
         </ul>
         <ul class="colors-list">
-          <li class="colors-list__item colors-list__item--black"></li>
-          <li class="colors-list__item colors-list__item--red"></li>
+          <li class="colors-list__item colors-list__item--black" data-value=""></li>
+          <li class="colors-list__item colors-list__item--red" data-value=""></li>
         </ul>
         <div class="prices">
           <span class="prices__old-price">4990 р.</span>

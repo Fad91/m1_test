@@ -2,144 +2,72 @@
   {
     "img": "img/peppy.png",
     "name": "Пеппи",
-    "sizes": [
-      {"S":"true"},
-      {"M": "true"},
-      {"L": "true"},
-      {"XL": "false"},
-      {"XXL": "false"}
-    ],
-    "colors": [
-      {"Red": "true"},
-      {"Black":"true"}
-    ],
-    "old-price": "4990р",
+    "sizes": ["true", "true", "true", "true", "false", "false"],
+    "colors": ["true", "true"],
+    "oldPrice": "4990р",
     "price": "2990р.",
     "discount": "true"
   },
   {
     "img": "img/vlady.png",
     "name": "Влади",
-    "sizes": [
-      {"S":"true"},
-      {"M": "true"},
-      {"L": "true"},
-      {"XL": "false"},
-      {"XXL": "false"}
-    ],
-    "colors": [
-      {"Red": "true"},
-      {"Black":"true"}
-    ],
-    "old-price": "4990р",
+    "sizes": ["true", "true", "true", "true", "true", "true"],
+    "colors": ["true", "false"],
+    "oldPrice": "4990р",
     "price": "2990р.",
     "discount": "true"
   },
   {
     "img": "img/jonny-miller.png",
     "name": "Джонни Миллер",
-    "sizes": [
-      {"S":"true"},
-      {"M": "true"},
-      {"L": "true"},
-      {"XL": "false"},
-      {"XXL": "false"}
-    ],
-    "colors": [
-      {"Red": "true"},
-      {"Black":"true"}
-    ],
-    "old-price": "4990р",
+    "sizes": ["true", "true", "true", "true", "false", "false"],
+    "colors": ["true", "true"],
+    "oldPrice": "4990р",
     "price": "2990р.",
     "discount": "true"
   },
   {
     "img": "img/peppy.png",
     "name": "Пеппи",
-    "sizes": [
-      {"S":"true"},
-      {"M": "true"},
-      {"L": "true"},
-      {"XL": "false"},
-      {"XXL": "false"}
-    ],
-    "colors": [
-      {"Red": "true"},
-      {"Black":"true"}
-    ],
-    "old-price": "4990р",
+    "sizes": ["true", "true", "true", "true", "true", "true"],
+    "colors": ["true", "true"],
+    "oldPrice": "4990р",
+    "price": "2990р.",
+    "discount": "true"
+  },
+  {
+    "img": "img/vlady.png",
+    "name": "Влади",
+    "sizes": ["true", "true", "true", "true", "false", "false"],
+    "colors": ["true", "false"],
+    "oldPrice": "4990р",
+    "price": "2990р.",
+    "discount": "true"
+  },
+  {
+    "img": "img/jonny-miller.png",
+    "name": "Джонни Миллер",
+    "sizes": ["true", "true", "true", "true", "true", "true"],
+    "colors": ["true", "true"],
+    "oldPrice": "4990р",
     "price": "2990р.",
     "discount": "true"
   },
   {
     "img": "img/peppy.png",
     "name": "Пеппи",
-    "sizes": [
-      {"S":"true"},
-      {"M": "true"},
-      {"L": "true"},
-      {"XL": "false"},
-      {"XXL": "false"}
-    ],
-    "colors": [
-      {"Red": "true"},
-      {"Black":"true"}
-    ],
-    "old-price": "4990р",
+    "sizes": ["true", "true", "true", "true", "false", "false"],
+    "colors": ["true", "true"],
+    "oldPrice": "4990р",
     "price": "2990р.",
     "discount": "true"
   },
   {
     "img": "img/peppy.png",
     "name": "Пеппи",
-    "sizes": [
-      {"S":"true"},
-      {"M": "true"},
-      {"L": "true"},
-      {"XL": "false"},
-      {"XXL": "false"}
-    ],
-    "colors": [
-      {"Red": "true"},
-      {"Black":"true"}
-    ],
-    "old-price": "4990р",
-    "price": "2990р.",
-    "discount": "true"
-  },
-  {
-    "img": "img/peppy.png",
-    "name": "Пеппи",
-    "sizes": [
-      {"S":"true"},
-      {"M": "true"},
-      {"L": "true"},
-      {"XL": "false"},
-      {"XXL": "false"}
-    ],
-    "colors": [
-      {"Red": "true"},
-      {"Black":"true"}
-    ],
-    "old-price": "4990р",
-    "price": "2990р.",
-    "discount": "true"
-  },
-  {
-    "img": "img/peppy.png",
-    "name": "Пеппи",
-    "sizes": [
-      {"S":"true"},
-      {"M": "true"},
-      {"L": "true"},
-      {"XL": "false"},
-      {"XXL": "false"}
-    ],
-    "colors": [
-      {"Red": "true"},
-      {"Black":"true"}
-    ],
-    "old-price": "4990р",
+    "sizes": ["true", "true", "true", "true", "true", "true"],
+    "colors": ["true", "true"],
+    "oldPrice": "4990р",
     "price": "2990р.",
     "discount": "true"
   }

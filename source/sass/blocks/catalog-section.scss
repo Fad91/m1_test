@@ -43,4 +43,10 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 36px;
+  cursor: pointer;
+
+  &--active {
+    background-color: $color-jazzberry-jam;
+    color: $color-default-white;
+  }
 }
