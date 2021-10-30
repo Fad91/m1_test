@@ -1,0 +1,15 @@
+.sizes-list {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  column-gap: 25px;
+  margin-bottom: 15px;
+}
+
+.sizes-list li {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 36px;
+}

@@ -1,0 +1,8 @@
+.order-list {
+  margin: 0;
+  padding: 0 5px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 220px));
+  column-gap: 10px;
+}

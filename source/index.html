@@ -1,13 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Стартовый шаблон</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Mr.Harness</title>
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
+
 <body>
-  <h1>Добро пожаловать в Лигу А.</h1>
+  <div class="visually-hidden">
+    <include src="build/img/sprite_auto.svg"></include>
+  </div>
+  <header>
+    <nav class="nav">
+      <div class="nav__logo">
+        <a href="#" class="nav__link">
+          <picture>
+            <source type="image/webp" srcset="img/logo.webp 1x, img/logo@2x.webp 2x">
+            <img src="img/logo.png" width="250" height="48" srcset="img/logo@2x.png 2x" alt="Логотип компании">
+          </picture>
+        </a>
+      </div>
+      <ul class="main-menu">
+        <li class="main-menu__item">
+          <a href="#" class="main-menu__link">Каталог</a>
+        </li>
+        <li class="main-menu__item">
+          <a href="#" class="main-menu__link">Преимущества</a>
+        </li>
+        <li class="main-menu__item">
+          <a href="#" class="main-menu__link">Отзывы</a>
+        </li>
+        <li class="main-menu__item">
+          <a href="#" class="main-menu__link">Как заказать</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="intro-section">
+      <div class="intro-section__wrapper">
+        <h1 class="intro-section__title"><span>Женские кожаные портупеи</span><span
+            class="intro-section__title--bold">Dr.Harness</span></h1>
+        <p class="intro-section__content">Любая модель со скидкой 50%</p>
+        <p class="intro-section__content intro-section__content--bold">всего за 2990р.</p>
+        <div class="intro-section__buttons-wrapper">
+          <button type="button" class="intro-section__button">Повседневные портупеи</button>
+          <button type="button" class="intro-section__button">Эротические портупеи</button>
+        </div>
+      </div>
+    </section>
+    <section class="main-section">
+      <div class="main-section__text-wrapper">
+        <h2 class="main-section__title">Хит №1 в мире – модные жеские портупеи</h2>
+        <p class="main-section__content">Как и все кожаные аксессуары, портупея находится сегодня на пике
+          востребованности в мире моды,
+          даря своей<br>обладательнице внимание и уверенность в себе</p>
+        <p class="main-section__content">Многообразие видов портупей - это как Характер каждой девушки: от портупеи из
+          тонких ремешков для романтичных и женственных натур, до сложных сплетений из средних и широких - для дерзких и
+          раскрепощенных.</p>
+      </div>
+      <div class="main-section__photos">
+      </div>
+    </section>
+    <section class="table-section">
+      <div class="table-section__wrapper">
+        <h2 class="table-section__title">Таблица размеров</h2>
+        <table class="table-section__table">
+          <tr>
+            <th>Международный</th>
+            <th>XS</th>
+            <th>S</th>
+            <th>M</th>
+            <th>L</th>
+            <th>XL</th>
+            <th>XXL</th>
+          </tr>
+          <tr>
+            <th>Российский</th>
+            <th>40</th>
+            <th>42</th>
+            <th>44/46</th>
+            <th>48/50</th>
+            <th>52/54</th>
+            <th>56</th>
+          </tr>
+          <tr>
+            <th>Бедра (см)</th>
+            <td>84-92</td>
+            <td>92-95</td>
+            <td>96-101</td>
+            <td>102-108</td>
+            <td>109-116</td>
+            <td>117-121</td>
+          </tr>
+          <tr>
+            <th>Талия (см)</th>
+            <td>60-65</td>
+            <td>66-69</td>
+            <td>70-77</td>
+            <td>78-85</td>
+            <td>86-95</td>
+            <td>96-102</td>
+          </tr>
+          <tr>
+            <th>Грудь (см)</th>
+            <td>74-80</td>
+            <td>82-85</td>
+            <td>86-93</td>
+            <td>94-102</td>
+            <td>103-113</td>
+            <td>114-119</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <section class="catalog-section">
+      <h2 class="catalog-section__title">Каталог</h2>
+      <div class="catalog-section__buttons">
+        <button type="button" class="catalog-section__button catalog-section__button--active">Повседневные
+          портупеи</button>
+        <button type="button" class="catalog-section__button">Эротические портупеи</button>
+      </div>
+      <ul class="catalog">
+      </ul>
+    </section>
+    <template id="card">
+      <li class="catalog__item card">
+        <picture>
+          <source type="image/webp" srcset="img/peppy.webp 1x, img/peppy@2x.webp 2x">
+          <img class="card__img" src="img/peppy.png" width="300" height="250" srcset="img/peppy@2x.png 2x"
+            alt="Логотип компании">
+        </picture>
+        <h3 class="card__title">Портупея "Пеппи"</h3>
+        <ul class="sizes-list">
+          <li>XS</li>
+          <li>S</li>
+          <li>M</li>
+          <li>L</li>
+          <li>XL</li>
+          <li>XXL</li>
+        </ul>
+        <ul class="colors-list">
+          <li class="colors-list__item colors-list__item--black"></li>
+          <li class="colors-list__item colors-list__item--red"></li>
+        </ul>
+        <div class="prices">
+          <span class="prices__old-price">4990 р.</span>
+          <span class="prices__price">2990 р.</span>
+        </div>
+        <button type="button" class="card__button">Заказать</button>
+      </li>
+    </template>
+  </main>
+  <footer class="footer">
+    <section class="order-section">
+      <h2 class="order-section__title">Как заказать?</h2>
+      <ul class="order-list">
+        <li class="order-list__item order-item">
+          <div class="order-item__image">
+            <svg width="51" height="50" viewbox="0 0 51 50">
+              <use href="#icon-newspaper"></use>
+            </svg>
+          </div>
+          <p class="order-item__content">Вы оформляете заказ на нашем сайте</p>
+        </li>
+        <li class="order-list__item order-item">
+          <div class="order-item__image">
+            <svg width="51" height="50" viewbox="0 0 51 50">
+              <use href="#icon-manager"></use>
+            </svg>
+          </div>
+          <p class="order-item__content">Менеджер перезвонит для уточнения деталей заказа</p>
+        </li>
+        <li class="order-list__item order-item">
+          <div class="order-item__image">
+            <svg width="51" height="50" viewbox="0 0 51 50">
+              <use href="#icon-box"></use>
+            </svg>
+          </div>
+          <p class="order-item__content">В ближайшее время отправляем ваш заказ</p>
+        </li>
+        <li class="order-list__item order-item">
+          <div class="order-item__image">
+            <svg width="51" height="50" viewbox="0 0 51 50">
+              <use href="#icon-pay"></use>
+            </svg>
+          </div>
+          <p class="order-item__content">Вы оплачиваете заказ при получении</p>
+        </li>
+      </ul>
+    </section>
+  </footer>
+  <script src="js/script.js"></script>
 </body>
+
 </html>

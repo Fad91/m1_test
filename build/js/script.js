@@ -1,15 +1,54 @@
-'use strict';
-var pageHeader = document.querySelector('.page-header');
-var headerToggle = document.querySelector('.page-header__toggle');
+// Переменные
 
-pageHeader.classList.remove('page-header--nojs');
+let catalog = document.querySelector(".catalog");
+let cards = [];
+let maxShowCardsCount = 6;
 
-headerToggle.addEventListener('click', function () {
-  if (pageHeader.classList.contains('page-header--closed')) {
-    pageHeader.classList.remove('page-header--closed');
-    pageHeader.classList.add('page-header--opened');
-  } else {
-    pageHeader.classList.add('page-header--closed');
-    pageHeader.classList.remove('page-header--opened');
-  }
-});
+// Получение данных о товарах
+
+function getData() {
+  fetch("js/daily-goods.json", {
+    method: "GET",
+    credentials: "same-origin",
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (loadedCards) {
+      cards = loadedCards;
+      // render();
+      renderCard(loadedCards);
+    });
+}
+
+function loadData() {
+  window.addEventListener("load", function () {
+    getData();
+  });
+}
+
+loadData();
+
+// Отрисовка карточек товара
+
+function render() {
+  catalog.innerHTML = "";
+}
+
+// Cоздание карточки товара
+
+function createCard(good) {
+  let cardTemplate = document.querySelector("#card");
+  let card = cardTemplate.content.cloneNode(true);
+
+card.querySelector(".card__title").textContent = `Портупея "${good.name}"`
+  return card
+}
+
+function renderCard(cards) {
+  let cardsToRender = cards.slice(0, Math.min(cards.length, maxShowCardsCount));
+    for (let i = 0; i < cardsToRender.length; i++) {
+      let cardElement = createCard(cardsToRender[i]);
+      catalog.append(cardElement)
+    }
+}

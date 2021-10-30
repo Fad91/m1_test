@@ -1,0 +1,23 @@
+.colors-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  column-gap: 16px;
+  margin-bottom: 18px;
+}
+
+.colors-list__item {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
+  &--red {
+    background-color: $color-defalut-red;
+  }
+
+  &--black {
+    background-color: $color-default-black;
+  }
+}

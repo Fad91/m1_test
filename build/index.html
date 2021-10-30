@@ -1,13 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Стартовый шаблон</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Mr.Harness</title>
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
+
 <body>
-  <h1>Добро пожаловать в Лигу А.</h1>
+  <div class="visually-hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-box" viewBox="0 0 48 50">
+  <image id="_030-package-1" data-name="030-package-1" width="48" height="50" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAyCAYAAAAayliMAAACw0lEQVRoge2ZS2gUQRCGv13GuIoGBPEiRFQ8GW8iCYgYPSieVAKCxKMHBXNT9CRECOpFRFR8HgyCQYQoig98IYIHL+pRQXL2LSgaFFsaapLKMtvz6N2dDMwPDdNL/dX9b1VXz3RXjDEkxH2gN6mxJ94A64B/cW6SCrgK7GzT5EPYP2xznFESAYPASXl+D9wKuQ6OddoFbJf+HeBdAo7FRmCVPA8Bh52zswIcrddMYcIYszDGXrflituTglczxnxW3C0u+6pDWyfwQPVtOD85/43p6FK9xSl4vyUKIW67+C4BD4F58nwQeJJiEtSliyt1ovAK2K24jcduEJozKoRjKcKv2wbloz+jj0vKx2iUTRRpQJHGMw7cLAG2vVZ+BuPWwEpgRPXXpwx9K9An6wKphmv1GFrALOCx6m8DxmeAgC/AJtW3hWVB2NEC7gGL5PkYMNa+OcbiGbBfjOYAjyYJkkvDKs9OeeRrM/YBVxtSPs9buwDYChwSPRPAS/mt5vGP2V21W/V3AEsylFONP/KO9EPKuy2zL+yrxE9grofjPPG3KjlVWAQSkvnAXeCoZ5jbAZue+4B+4FegBnwrq70I6BMB08poZ4HSKHIfKCRKAXmjFJA3Ci8gSGATokc2kJo6QWgFKnIeZD8jz8aNlUbAFWBFCydeD7tRXQc+uozSCDgCHAA6mjrNaBh5K/geZ5hGwEjd5+aMQFmF8kaaFIrCGmAvMNujMlneU+BCFrKvgGvAUk8fyMn3TeBDWqKvgGE5LejwjMDzJBUnCr4CLkrLDWUVyhu+KbQa2NOkKnQ5C9lXwCiwzNOHxS65yGh7FTouVcg3ArlVoXPSqhkFVISX+fXcV0CI2PvcBvD+rijLaN4oBeSNogqYXPxawLd85pIJX0NSoETYm8ATBbkfCK9/q/aKqZVnPC2HjcBpYKCA68EAN/4DY7bWebucnTgAAAAASUVORK5CYII="></image>
+</symbol><symbol id="icon-manager" viewBox="0 0 51 50">
+  <image id="_002-telemarketer" data-name="002-telemarketer" width="51" height="50" xlink:href="data:img/png;base64,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"></image>
+</symbol><symbol id="icon-newspaper" viewBox="0 0 51 50">
+  <image id="_028-newspaper" data-name="028-newspaper" width="51" height="50" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAyCAYAAADx/eOPAAADrElEQVRogeWaTUhVQRTHf35bWaGJ1SboiyDQPsioNkEtoiiiKAyiRYuIahFEECktomVBq0SiRRBEX2RftCrSolqkFRVtWih9EYQZhmZqToydJ+Pt3Xl3ru/dd80/XO57M/eeOf85Z86cmbk5Sqla4DCQT7yhgMvAXvn9DzSZpBUxRgXwNZl62hq9QDHwCWjSBGPGYxCoBhYA/UCe75NKqS71F1e0kWJ6HRcde5VSFX46muNkQiT9HA5TLG9VAeeA5yaZuLmXCZtue8QNq3Oj1yvt6BWB3bZwrAfaZgkOgxEppju3G7jp8M6A3AdtZG4D60epXFjUAwdc37W5WVTWSIZQc5/NMpuAjUBRWOEhoAd6D3A33WSUuNqYwf8QzYZhs8wyYEnI+ecXcEnukcGPzHzg2SiV2ADUeMqmyhj0Cy6JjkuaSKaCH5l5odQficWe/0eAOqAwRUDRhHTSuwV4lQ4yPcZvHfMbHcZXAzAb6PCU7wYmB5QxB1iaLjImmoF7DjI7hIwX24F9klGkskwbcNGhzSEEITPdUWaRT/lrYL+jLCeMm9CcCZSniGaIm30Jk05FSabOMZrpjP2lSwNRutlOWc3mSSf6Xbp+FrDItYEoLbNNtomyGs3ShbfAwUw28F9FsyBkuh1l/g6py6gRxM3KgBKH7LnAp3wlcMgyqZrQY6bWtSP9yJgNngCOOcicJPeJnvILwFwHOS+A8w7P+5L5ZvwulssVfZ7nTwFHLZYz8RF44tqgH5kWSQqXi3u57AEktovOeMob5CoIIG8gRX1S2MZMovF0oz8DMocw7kLzmEGq0LwuS9uzLovBYdjI3JDMNRs4LXNSAjnG3Xe+s7lZ0PV6JuCdo0rlXmhry2YZvWm+NWI30+n/D+C6p/wWsAto9cyBI2Aj0ycbeXHANdmx+WCbg/JjfmJmoi3VA7mGdULNujFAQu9cTaQTmGkkiDboY44VGbSmltslqVBXwHcSB8u5+sj5jhxLd6Q4Nq9U0cHlGP+xaNWm3ey+MCuTk1s/fAc+p98YSdES8LmFwCr53aw/Nyk3dt21wtMsoThfTggyiZ9Ae0D5rbInzRApMdVJw4EeKaUKY/y1RuI6a+j8YOgTIKPyjVH5TilVo5TKiSGJNUqpJkPXbqVUma7LMT5qKpUd/0rDjO2y4uuUBVU25qSEgiXiUlVGndZrrSyx8bLW5OojjFqjQaNSaoapv2kZE9o6O4DVkkboXsk29Gcl74GnwFXg4QiFgD94oe4wy3cXNgAAAABJRU5ErkJggg=="></image>
+</symbol><symbol id="icon-pay" viewBox="0 0 60 45">
+  <image id="_003-credit-card" data-name="003-credit-card" width="60" height="45" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAtCAYAAADydghMAAAEWElEQVRogdWZW4hVVRjHf3POTKU1WcwUVFpBGhIoSheQIIuGIKgoIiwFNUi7EFk+6EM3qIfqxSQIHwwijCizCxkUNaGN4kNZUFGBgaWMRmpkHButsfPFwv+q5ebsc2btvc9pnz9s9trfXnut9V3Wd9mrx8wAHgeWA2dRfhwFNgMPAH/GrtYxvBp4tgsYTeJ94ObYjxzDY8AkYATY5OltXWo2OFOsA1cCSzTC+cDPMaM5hseBXuAu4PWSMNcM5wH79X428E3MxxXgmNrndGzJJzAAzJR1JTEDuCjlu5A+HjtpJWgnzfhO4DXgbV0bgGtjJ2iAycBLwF7ge2BP4ENuAr4DdgE/AVuAqxJD5NtuZlazE3jIeWxdCywd84N+sVefmX2bMnIa3WFOMM+8gD4zdg2VFDks1X0f8BHwMfC7aPfnkO8TwGVqPw8sAN7Ss6f/CCwC7gPGRHsjx5wnI0XDm0VbE9C2irYhh4Z3a4w3E3Q/9mEzGwzoiwNtzmqnhj2OB+16AfI9W/ftCbp/PggcCuhbgvYFBcyfynCf7rcDr8p5zRbtlBzz/aD7MuBUtS8E7lZ7upylx6NB+6sc8/6HFJNe0sSBDOUw6aFgnFEzGzGzow3m2G5mO4PnF4tyWr0pcnhF4eOWQBMuh10PDOeQr/t2DbBSJhqa6TPAbYrNVwf0z4EHc8x5ElymVQPOAFYALxQ1cAsMATcC5yreumLgM6AfuAeYC/wFbJPwQ8wDduj5EmB3zMRpGm43hlMspaZwNVEciV3n/8VwUfgQ+KOJ80WZmRPku8C6bmd4bkTfG1xE6HaGndZ+a6Jh0zVHwlnZ7QwvVPRohfnAVqDaKtMqO6ZNcH39uo+naXhFk98nruB+RBnXupS61RROXJY2C3gqmDSE086TwJeKwfemONJRYBVwIEGfqML8mNYo0+prkmV5VM3s4hZ96hpvfYt+G9XvSIt+y3NkWreq/1gjaR7XH8HrUqS1S4WE+5e0FpgqjXr06P07enbJTBU4M1GAVFT++bi7SOViX4Px9is5yY+UXLrMVy4Nd7vTikbIcBH1bicQrjP6/5Zj+DS1D3cJw6NBOzqP6NVxhbs/rAKcCHffSYRZk0cyTE2I4ecUJy/X1S34APglC8NPKx9dpsM0a9K/rhAzTfvnoCqRaoeE1KNQ9h7wWKYBdHoYg35JdpJy1JEiOWoTrgE+dZldluKhFljBVCUUnTp8M1nT6RF+xlnlpf4hq4b3peTGZUctqzeOllJJYFnrYf/dWv1VLON5sofpTNmF3d6sJn1ACcsVwBdtWmiRcOF2pzsazmvSA+XjrSH8Oi1vRjW5DYtrB/5dZ14vfUiJQNn3sGN40HnprE7LS2mwwIV1Apm9tE8lXwa+Lmmx4VHXyac7oaxmMekpwK9ielDtsmNA2+/vLBo+FuxZdxL4SRfs4evVrmTRsMNG4I5i19URbMq6hxdrb7hjT//HpMxwVjkMLP0Hr4jBluEeczMAAAAASUVORK5CYII="></image>
+</symbol></svg>
+  </div>
+  <header>
+    <nav class="nav">
+      <div class="nav__logo">
+        <a href="#" class="nav__link">
+          <picture>
+            <source type="image/webp" srcset="img/logo.webp 1x, img/logo@2x.webp 2x">
+            <img src="img/logo.png" width="250" height="48" srcset="img/logo@2x.png 2x" alt="Логотип компании">
+          </picture>
+        </a>
+      </div>
+      <ul class="main-menu">
+        <li class="main-menu__item">
+          <a href="#" class="main-menu__link">Каталог</a>
+        </li>
+        <li class="main-menu__item">
+          <a href="#" class="main-menu__link">Преимущества</a>
+        </li>
+        <li class="main-menu__item">
+          <a href="#" class="main-menu__link">Отзывы</a>
+        </li>
+        <li class="main-menu__item">
+          <a href="#" class="main-menu__link">Как заказать</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="intro-section">
+      <div class="intro-section__wrapper">
+        <h1 class="intro-section__title"><span>Женские кожаные портупеи</span><span class="intro-section__title--bold">Dr.Harness</span></h1>
+        <p class="intro-section__content">Любая модель со скидкой 50%</p>
+        <p class="intro-section__content intro-section__content--bold">всего за 2990р.</p>
+        <div class="intro-section__buttons-wrapper">
+          <button type="button" class="intro-section__button">Повседневные портупеи</button>
+          <button type="button" class="intro-section__button">Эротические портупеи</button>
+        </div>
+      </div>
+    </section>
+    <section class="main-section">
+      <div class="main-section__text-wrapper">
+        <h2 class="main-section__title">Хит №1 в мире – модные жеские портупеи</h2>
+        <p class="main-section__content">Как и все кожаные аксессуары, портупея находится сегодня на пике
+          востребованности в мире моды,
+          даря своей<br>обладательнице внимание и уверенность в себе</p>
+        <p class="main-section__content">Многообразие видов портупей - это как Характер каждой девушки: от портупеи из
+          тонких ремешков для романтичных и женственных натур, до сложных сплетений из средних и широких - для дерзких и
+          раскрепощенных.</p>
+      </div>
+      <div class="main-section__photos">
+      </div>
+    </section>
+    <section class="table-section">
+      <div class="table-section__wrapper">
+        <h2 class="table-section__title">Таблица размеров</h2>
+        <table class="table-section__table">
+          <tr>
+            <th>Международный</th>
+            <th>XS</th>
+            <th>S</th>
+            <th>M</th>
+            <th>L</th>
+            <th>XL</th>
+            <th>XXL</th>
+          </tr>
+          <tr>
+            <th>Российский</th>
+            <th>40</th>
+            <th>42</th>
+            <th>44/46</th>
+            <th>48/50</th>
+            <th>52/54</th>
+            <th>56</th>
+          </tr>
+          <tr>
+            <th>Бедра (см)</th>
+            <td>84-92</td>
+            <td>92-95</td>
+            <td>96-101</td>
+            <td>102-108</td>
+            <td>109-116</td>
+            <td>117-121</td>
+          </tr>
+          <tr>
+            <th>Талия (см)</th>
+            <td>60-65</td>
+            <td>66-69</td>
+            <td>70-77</td>
+            <td>78-85</td>
+            <td>86-95</td>
+            <td>96-102</td>
+          </tr>
+          <tr>
+            <th>Грудь (см)</th>
+            <td>74-80</td>
+            <td>82-85</td>
+            <td>86-93</td>
+            <td>94-102</td>
+            <td>103-113</td>
+            <td>114-119</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <section class="catalog-section">
+      <h2 class="catalog-section__title">Каталог</h2>
+      <div class="catalog-section__buttons">
+        <button type="button" class="catalog-section__button catalog-section__button--active">Повседневные
+          портупеи</button>
+        <button type="button" class="catalog-section__button">Эротические портупеи</button>
+      </div>
+      <ul class="catalog">
+      </ul>
+    </section>
+    <template id="card">
+      <li class="catalog__item card">
+        <picture>
+          <source type="image/webp" srcset="img/peppy.webp 1x, img/peppy@2x.webp 2x">
+          <img class="card__img" src="img/peppy.png" width="300" height="250" srcset="img/peppy@2x.png 2x" alt="Логотип компании">
+        </picture>
+        <h3 class="card__title">Портупея "Пеппи"</h3>
+        <ul class="sizes-list">
+          <li>XS</li>
+          <li>S</li>
+          <li>M</li>
+          <li>L</li>
+          <li>XL</li>
+          <li>XXL</li>
+        </ul>
+        <ul class="colors-list">
+          <li class="colors-list__item colors-list__item--black"></li>
+          <li class="colors-list__item colors-list__item--red"></li>
+        </ul>
+        <div class="prices">
+          <span class="prices__old-price">4990 р.</span>
+          <span class="prices__price">2990 р.</span>
+        </div>
+        <button type="button" class="card__button">Заказать</button>
+      </li>
+    </template>
+  </main>
+  <footer class="footer">
+    <section class="order-section">
+      <h2 class="order-section__title">Как заказать?</h2>
+      <ul class="order-list">
+        <li class="order-list__item order-item">
+          <div class="order-item__image">
+            <svg width="51" height="50" viewbox="0 0 51 50">
+              <use href="#icon-newspaper"></use>
+            </svg>
+          </div>
+          <p class="order-item__content">Вы оформляете заказ на нашем сайте</p>
+        </li>
+        <li class="order-list__item order-item">
+          <div class="order-item__image">
+            <svg width="51" height="50" viewbox="0 0 51 50">
+              <use href="#icon-manager"></use>
+            </svg>
+          </div>
+          <p class="order-item__content">Менеджер перезвонит для уточнения деталей заказа</p>
+        </li>
+        <li class="order-list__item order-item">
+          <div class="order-item__image">
+            <svg width="51" height="50" viewbox="0 0 51 50">
+              <use href="#icon-box"></use>
+            </svg>
+          </div>
+          <p class="order-item__content">В ближайшее время отправляем ваш заказ</p>
+        </li>
+        <li class="order-list__item order-item">
+          <div class="order-item__image">
+            <svg width="51" height="50" viewbox="0 0 51 50">
+              <use href="#icon-pay"></use>
+            </svg>
+          </div>
+          <p class="order-item__content">Вы оплачиваете заказ при получении</p>
+        </li>
+      </ul>
+    </section>
+  </footer>
+  <script src="js/script.js"></script>
 </body>
+
 </html>
