@@ -32,4 +32,12 @@
   font-family: $font-family-opensans;
   box-shadow: 0 4px 0 0 $color-cerulean-blue;
   margin-bottom: 22px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+  &:hover {
+    transition: all 0.5s ease;
+    background-image: $button-red-linear-gradient;
+    box-shadow: 0 4px 0 0 $color-jazzberry-jam;
+  }
 }

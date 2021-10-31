@@ -47,8 +47,8 @@
         <p class="intro-section__content">Любая модель со скидкой 50%</p>
         <p class="intro-section__content intro-section__content--bold">всего за 2990р.</p>
         <div class="intro-section__buttons-wrapper">
-          <button type="button" class="intro-section__button">Повседневные портупеи</button>
-          <button type="button" class="intro-section__button">Эротические портупеи</button>
+          <button type="button" class="intro-section__button" id="header-daily" aria-label="Перейти к каталогу повседневных портупей">Повседневные портупеи</button>
+          <button type="button" class="intro-section__button" id="header-erotic" aria-label="Перейти к каталогу эротических портупей">Эротические портупеи</button>
         </div>
       </div>
     </section>
@@ -118,11 +118,11 @@
       </div>
     </section>
     <section class="catalog-section">
-      <h2 class="catalog-section__title">Каталог</h2>
+      <h2 class="catalog-section__title" id="catalog">Каталог</h2>
       <div class="catalog-section__buttons">
-        <button type="button" class="catalog-section__button catalog-section__button--active" id="daily">Повседневные
+        <button type="button" class="catalog-section__button catalog-section__button--active" id="daily" aria-label="переключить на каталог повседневных портупей">Повседневные
           портупеи</button>
-        <button type="button" class="catalog-section__button" id="erotic">Эротические портупеи</button>
+        <button type="button" class="catalog-section__button" id="erotic" aria-label="переключить на каталог эротических портупей">Эротические портупеи</button>
       </div>
       <ul class="catalog">
       </ul>
@@ -134,17 +134,16 @@
       <li class="catalog__item card">
         <!-- <picture>
           <source type="image/webp" srcset="img/peppy.webp 1x, img/peppy@2x.webp 2x"> -->
-          <img class="card__img" src="img/peppy.png" width="300" height="250"
-            alt="Изображение товара">
+        <img class="card__img" src="img/peppy.png" width="300" height="250" alt="Изображение товара">
         </picture>
         <h3 class="card__title">Портупея "Пеппи"</h3>
         <ul class="sizes-list">
-          <li class="sizes-list__item" data-value="">XS</li>
-          <li class="sizes-list__item" data-value="">S</li>
-          <li class="sizes-list__item" data-value="">M</li>
-          <li class="sizes-list__item" data-value="">L</li>
-          <li class="sizes-list__item" data-value="">XL</li>
-          <li class="sizes-list__item" data-value="">XXL</li>
+          <li class="sizes-list__item" data-instock=""><button>XS</button></li>
+          <li class="sizes-list__item" data-instock=""><button>S</button></li>
+          <li class="sizes-list__item" data-instock=""><button>M</button></li>
+          <li class="sizes-list__item" data-instock=""><button>L</button></li>
+          <li class="sizes-list__item" data-instock=""><button>XL</button></li>
+          <li class="sizes-list__item" data-instock=""><button>XXL</button></li>
         </ul>
         <ul class="colors-list">
           <li class="colors-list__item colors-list__item--black" data-value=""></li>
@@ -154,9 +153,48 @@
           <span class="prices__old-price">4990 р.</span>
           <span class="prices__price">2990 р.</span>
         </div>
-        <button type="button" class="card__button">Заказать</button>
+        <button type="button" class="card__button" id="card-button" aria-label="Заказать">Заказать</button>
       </li>
     </template>
+      <section class="popup popup--hidden">
+        <img class="popup__image" src="img/peppy.png" alt="Изображение товара" width="320" height="350" class="popup__img">
+        <div class="popup__text-wrapper">
+          <button type="button" aria-label="Закрыть" class="popup__close-button">
+            <svg width="12" height="12" viewbox="0 0 12 12">
+              <use href="#icon-close"></use>
+            </svg>
+          </button>
+          <h2 class="popup__title">Портупея "Джонни Миллер"</h2>
+          <div class="prices">
+            <span class="prices__old-price">4990 р.</span>
+            <span class="prices__price">2990 р.</span>
+          </div>
+          <form action="#" method="post">
+            <div class="select" id="select-1">
+              <button type="button" class="select__toggle" name="site" value="" data-select="toggle"
+              data-index="-1">XS
+              <svg width="12" height="12" viewbox="0 0 12 12">
+                <use href="#icon-arrow"></use>
+              </svg></button>
+              <div class="select__dropdown">
+                <ul class="select__options">
+                  <li class="select__option" data-select="option" data-value="youtube" data-index="0">XS</li>
+                  <li class="select__option" data-select="option" data-value="vkontakte" data-index="1">S</li>
+                  <li class="select__option" data-select="option" data-value="instagram" data-index="2">M</li>
+                  <li class="select__option" data-select="option" data-value="instagram" data-index="3">L</li>
+                  <li class="select__option" data-select="option" data-value="instagram" data-index="4">XL</li>
+                  <li class="select__option" data-select="option" data-value="instagram" data-index="5">XXL</li>
+                </ul>
+              </div>
+            </div>
+            <label for="name" class="visually-hidden">Введите ваше имя</label>
+            <input type="text" class="popup__input" name="name" id="name" placeholder="Введите ваше имя">
+            <label for="tel" class="visually-hidden">Введите ваш телефон</label>
+            <input type="tel" class="popup__input" name="tel" id="name" placeholder="Введите ваш телефон">
+            <button type="button" class="popup__button" aria-label="Заказать">Заказать</button>
+          </form>
+        </div>
+      </section>
   </main>
   <footer class="footer">
     <section class="order-section">
@@ -197,6 +235,7 @@
       </ul>
     </section>
   </footer>
+  <script src="js/vendor.js"></script>
   <script src="js/script.js"></script>
 </body>
 

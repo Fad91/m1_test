@@ -2,6 +2,7 @@
   max-width: 960px;
   padding: 50px 10px 90px 10px;
   margin: 0 auto;
+  position: relative;
 }
 
 .catalog-section__title {
@@ -31,6 +32,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
+  column-gap: 2px;
 }
 
 .catalog-section__button {
@@ -44,9 +46,15 @@
   font-size: 18px;
   line-height: 36px;
   cursor: pointer;
+  transition: all 0.5s ease;
 
   &--active {
     background-color: $color-jazzberry-jam;
     color: $color-default-white;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    box-shadow: 0 0 2px 2px $color-suva-grey;
   }
 }

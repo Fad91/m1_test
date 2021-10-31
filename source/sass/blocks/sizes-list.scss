@@ -4,16 +4,23 @@
   padding: 0;
   display: flex;
   justify-content: center;
-  column-gap: 25px;
+  column-gap: 12px;
   margin-bottom: 15px;
 }
 
-.sizes-list__item {
+.sizes-list__item button {
   font-weight: 400;
   font-size: 18px;
   line-height: 36px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:focus {
+    border: 1px solid $color-jazzberry-jam;
+  }
 }
 
-.sizes-list__item--inactive {
+.sizes-list__item--inactive button{
   color: $color-quartz;
 }
