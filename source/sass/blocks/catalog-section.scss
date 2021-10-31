@@ -33,6 +33,11 @@
   justify-content: center;
   margin-bottom: 30px;
   column-gap: 2px;
+
+  @include vp--639 {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .catalog-section__button {

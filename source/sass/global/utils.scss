@@ -9,3 +9,17 @@
   border: 0;
   clip: rect(0 0 0 0);
 }
+
+.overlay {
+  background: rgba(0,0,0,0.7);
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+
+  &--hidden {
+    display: none;
+  }
+}

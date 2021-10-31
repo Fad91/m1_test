@@ -3,11 +3,17 @@
 
 $font-family-opensans: "Open Sans", Arial, sans-serif;
 
+// Viewports
+
+$vp--960: 960px;
+$vp--640: 640px;
+
+
 // Colors
 
 $color-default-white: #ffffff;
 $color-default-black: #000000;
-$color-defalut-red: #ff0000;
+$color-default-red: #ff0000;
 $color-nero: #1e1e1e;
 $color-white-smoke: #f3f3f3;
 $color-quartz: #dbdbdf;
@@ -17,6 +23,7 @@ $color-cerulean-blue: #375cb2;
 $color-lavender-blush: #f7f2f4;
 $color-pale-violet-red: #d579a1;
 $color-ghost: #ceced3;
+$color-very-light-gray: #e6e6e6;
 
 // linear-gradient
 $button-blue-linear-gradient: linear-gradient(0deg, #4776e6, #8e54e9);

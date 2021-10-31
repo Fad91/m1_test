@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mr.Harness</title>
+  <link rel="preload" href="fonts/open-sans-v26-latin_cyrillic-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/open-sans-v26-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/open-sans-v27-latin_cyrillic-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/open-sans-v26-latin_cyrillic-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -25,7 +30,7 @@
       </div>
       <ul class="main-menu">
         <li class="main-menu__item">
-          <a href="#" class="main-menu__link">Каталог</a>
+          <a href="#catalog" class="main-menu__link">Каталог</a>
         </li>
         <li class="main-menu__item">
           <a href="#" class="main-menu__link">Преимущества</a>
@@ -34,7 +39,7 @@
           <a href="#" class="main-menu__link">Отзывы</a>
         </li>
         <li class="main-menu__item">
-          <a href="#" class="main-menu__link">Как заказать</a>
+          <a href="#order" class="main-menu__link">Как заказать</a>
         </li>
       </ul>
     </nav>
@@ -47,8 +52,10 @@
         <p class="intro-section__content">Любая модель со скидкой 50%</p>
         <p class="intro-section__content intro-section__content--bold">всего за 2990р.</p>
         <div class="intro-section__buttons-wrapper">
-          <button type="button" class="intro-section__button" id="header-daily" aria-label="Перейти к каталогу повседневных портупей">Повседневные портупеи</button>
-          <button type="button" class="intro-section__button" id="header-erotic" aria-label="Перейти к каталогу эротических портупей">Эротические портупеи</button>
+          <button type="button" class="intro-section__button" id="header-daily"
+            aria-label="Перейти к каталогу повседневных портупей">Повседневные портупеи</button>
+          <button type="button" class="intro-section__button" id="header-erotic"
+            aria-label="Перейти к каталогу эротических портупей">Эротические портупеи</button>
         </div>
       </div>
     </section>
@@ -68,61 +75,65 @@
     <section class="table-section">
       <div class="table-section__wrapper">
         <h2 class="table-section__title">Таблица размеров</h2>
-        <table class="table-section__table">
-          <tr>
-            <th>Международный</th>
-            <th>XS</th>
-            <th>S</th>
-            <th>M</th>
-            <th>L</th>
-            <th>XL</th>
-            <th>XXL</th>
-          </tr>
-          <tr>
-            <th>Российский</th>
-            <th>40</th>
-            <th>42</th>
-            <th>44/46</th>
-            <th>48/50</th>
-            <th>52/54</th>
-            <th>56</th>
-          </tr>
-          <tr>
-            <th>Бедра (см)</th>
-            <td>84-92</td>
-            <td>92-95</td>
-            <td>96-101</td>
-            <td>102-108</td>
-            <td>109-116</td>
-            <td>117-121</td>
-          </tr>
-          <tr>
-            <th>Талия (см)</th>
-            <td>60-65</td>
-            <td>66-69</td>
-            <td>70-77</td>
-            <td>78-85</td>
-            <td>86-95</td>
-            <td>96-102</td>
-          </tr>
-          <tr>
-            <th>Грудь (см)</th>
-            <td>74-80</td>
-            <td>82-85</td>
-            <td>86-93</td>
-            <td>94-102</td>
-            <td>103-113</td>
-            <td>114-119</td>
-          </tr>
-        </table>
+        <div class="table-section__table-wrapper">
+          <table class="table-section__table">
+            <tr>
+              <th>Международный</th>
+              <th>XS</th>
+              <th>S</th>
+              <th>M</th>
+              <th>L</th>
+              <th>XL</th>
+              <th>XXL</th>
+            </tr>
+            <tr>
+              <th>Российский</th>
+              <th>40</th>
+              <th>42</th>
+              <th>44/46</th>
+              <th>48/50</th>
+              <th>52/54</th>
+              <th>56</th>
+            </tr>
+            <tr>
+              <th>Бедра (см)</th>
+              <td>84-92</td>
+              <td>92-95</td>
+              <td>96-101</td>
+              <td>102-108</td>
+              <td>109-116</td>
+              <td>117-121</td>
+            </tr>
+            <tr>
+              <th>Талия (см)</th>
+              <td>60-65</td>
+              <td>66-69</td>
+              <td>70-77</td>
+              <td>78-85</td>
+              <td>86-95</td>
+              <td>96-102</td>
+            </tr>
+            <tr>
+              <th>Грудь (см)</th>
+              <td>74-80</td>
+              <td>82-85</td>
+              <td>86-93</td>
+              <td>94-102</td>
+              <td>103-113</td>
+              <td>114-119</td>
+            </tr>
+          </table>
+        </div>
       </div>
     </section>
     <section class="catalog-section">
       <h2 class="catalog-section__title" id="catalog">Каталог</h2>
       <div class="catalog-section__buttons">
-        <button type="button" class="catalog-section__button catalog-section__button--active" id="daily" aria-label="переключить на каталог повседневных портупей">Повседневные
+        <button type="button" class="catalog-section__button catalog-section__button--active" id="daily"
+          aria-label="переключить на каталог повседневных портупей">Повседневные
           портупеи</button>
-        <button type="button" class="catalog-section__button" id="erotic" aria-label="переключить на каталог эротических портупей">Эротические портупеи</button>
+        <button type="button" class="catalog-section__button" id="erotic"
+          aria-label="переключить на каталог эротических портупей">Эротические портупеи</button>
       </div>
       <ul class="catalog">
       </ul>
@@ -135,6 +146,7 @@
         <!-- <picture>
           <source type="image/webp" srcset="img/peppy.webp 1x, img/peppy@2x.webp 2x"> -->
         <img class="card__img" src="img/peppy.png" width="300" height="250" alt="Изображение товара">
+        <span class="card__discount card__discount--hidden"></span>
         </picture>
         <h3 class="card__title">Портупея "Пеппи"</h3>
         <ul class="sizes-list">
@@ -156,8 +168,10 @@
         <button type="button" class="card__button" id="card-button" aria-label="Заказать">Заказать</button>
       </li>
     </template>
+    <div class="overlay overlay--hidden">
       <section class="popup popup--hidden">
-        <img class="popup__image" src="img/peppy.png" alt="Изображение товара" width="320" height="350" class="popup__img">
+        <img class="popup__image" src="img/peppy.png" alt="Изображение товара" width="320" height="350"
+          class="popup__img">
         <div class="popup__text-wrapper">
           <button type="button" aria-label="Закрыть" class="popup__close-button">
             <svg width="12" height="12" viewbox="0 0 12 12">
@@ -171,11 +185,10 @@
           </div>
           <form action="#" method="post">
             <div class="select" id="select-1">
-              <button type="button" class="select__toggle" name="site" value="" data-select="toggle"
-              data-index="-1">XS
-              <svg width="12" height="12" viewbox="0 0 12 12">
-                <use href="#icon-arrow"></use>
-              </svg></button>
+              <button type="button" class="select__toggle" name="site" value="" data-select="toggle" data-index="-1">XS
+                <svg width="12" height="12" viewbox="0 0 12 12">
+                  <use href="#icon-arrow"></use>
+                </svg></button>
               <div class="select__dropdown">
                 <ul class="select__options">
                   <li class="select__option" data-select="option" data-value="youtube" data-index="0">XS</li>
@@ -190,14 +203,14 @@
             <label for="name" class="visually-hidden">Введите ваше имя</label>
             <input type="text" class="popup__input" name="name" id="name" placeholder="Введите ваше имя">
             <label for="tel" class="visually-hidden">Введите ваш телефон</label>
-            <input type="tel" class="popup__input" name="tel" id="name" placeholder="Введите ваш телефон">
-            <button type="button" class="popup__button" aria-label="Заказать">Заказать</button>
+            <input type="tel" class="popup__input" name="tel" id="tel" placeholder="Введите ваш телефон">
+            <button type="submit" class="popup__button" aria-label="Заказать">Заказать</button>
           </form>
         </div>
       </section>
-  </main>
-  <footer class="footer">
-    <section class="order-section">
+    </div>
+    <section class="order-section" id="order">
+      <div class="order-section__wrapper">
       <h2 class="order-section__title">Как заказать?</h2>
       <ul class="order-list">
         <li class="order-list__item order-item">
@@ -233,8 +246,9 @@
           <p class="order-item__content">Вы оплачиваете заказ при получении</p>
         </li>
       </ul>
+    </div>
     </section>
-  </footer>
+  </main>
   <script src="js/vendor.js"></script>
   <script src="js/script.js"></script>
 </body>

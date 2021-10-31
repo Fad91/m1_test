@@ -6,7 +6,7 @@
     "colors": ["true", "true"],
     "oldPrice": "4990р",
     "price": "2990р.",
-    "discount": "true"
+    "discount": "-53%"
   },
   {
     "img": "img/vlady.png",
@@ -15,7 +15,7 @@
     "colors": ["true", "false"],
     "oldPrice": "4990р",
     "price": "2990р.",
-    "discount": "true"
+    "discount": "-53%"
   },
   {
     "img": "img/jonny-miller.png",
@@ -24,7 +24,7 @@
     "colors": ["true", "true"],
     "oldPrice": "4990р",
     "price": "2990р.",
-    "discount": "true"
+    "discount": "-53%"
   },
   {
     "img": "img/peppy.png",
@@ -33,7 +33,7 @@
     "colors": ["true", "true"],
     "oldPrice": "4990р",
     "price": "2990р.",
-    "discount": "true"
+    "discount": "-53%"
   },
   {
     "img": "img/vlady.png",
@@ -42,7 +42,7 @@
     "colors": ["true", "false"],
     "oldPrice": "4990р",
     "price": "2990р.",
-    "discount": "true"
+    "discount": "-53%"
   },
   {
     "img": "img/jonny-miller.png",
@@ -51,7 +51,7 @@
     "colors": ["true", "true"],
     "oldPrice": "4990р",
     "price": "2990р.",
-    "discount": "true"
+    "discount": "-53%"
   },
   {
     "img": "img/peppy.png",
@@ -60,7 +60,7 @@
     "colors": ["true", "true"],
     "oldPrice": "4990р",
     "price": "2990р.",
-    "discount": "true"
+    "discount": "-53%"
   },
   {
     "img": "img/peppy.png",
@@ -69,6 +69,6 @@
     "colors": ["true", "true"],
     "oldPrice": "4990р",
     "price": "2990р.",
-    "discount": "true"
+    "discount": "-53%"
   }
 ]

@@ -1,6 +1,7 @@
 // Переменные
 
-let catalogSection = document.querySelector(".catalog-section")
+let pageBody = document.querySelector("body");
+let catalogSection = document.querySelector(".catalog-section");
 let catalog = document.querySelector(".catalog");
 let cards = [];
 let maxShowCardsCount = 6;
@@ -10,7 +11,15 @@ let eroticButton = document.querySelector("#erotic");
 let dailyHeaderButton = document.querySelector("#header-daily");
 let headerEroticButton = document.querySelector("#header-erotic");
 let target = document.querySelector("#catalog");
+let overlay = document.querySelector(".overlay");
 let popup = document.querySelector(".popup");
+let form = document.querySelector(".popup form");
+let COUNTRY_CODE = "+7";
+let NAME_LENGTH = 2;
+let PHONE_LENGTH = 17;
+let length = COUNTRY_CODE.length;
+let nameInput = document.querySelector("#name");
+let phoneInput = document.querySelector("#tel");
 
 // Получение данных о товарах
 
@@ -74,26 +83,34 @@ function createCard(good) {
   if (good.price) {
     card.querySelector(".prices__price").textContent = good.price;
   }
+
+  if (good.discount) {
+    let discount = card.querySelector(".card__discount");
+    discount.classList.remove("card__discount--hidden");
+    discount.textContent = good.discount;
+  }
   // Функция вызова поп-апа
   function makeOrder() {
     if (catalog) {
       let cardButtons = card.querySelectorAll("#card-button");
       cardButtons.forEach(function (btn) {
         btn.addEventListener("click", function () {
-         popup.classList.remove("popup--hidden")
-        //  Отрисовка значении попапа
-         let popupTitle = document.querySelector(".popup__title");
-         let popupImage = document.querySelector(".popup__image")
-         let popupPrice = popup.querySelector(".prices__price")
-         let popupOldPrice = popup.querySelector(".prices__old-price")
-         popupTitle.textContent = `Портупея "${good.name}"`;
-         popupImage.src = good.img;
-         popupPrice.textContent = good.price;
-         if (popupOldPrice) {
-           popupOldPrice.textContent = good.oldPrice;
-         } else {
-          popupOldPrice.classList.add("prices__old-price--hidden");
-         }
+          popup.classList.remove("popup--hidden");
+          overlay.classList.remove("overlay--hidden");
+          bodyScrollLock.disableBodyScroll(pageBody);
+          //  Отрисовка значении попапа
+          let popupTitle = document.querySelector(".popup__title");
+          let popupImage = document.querySelector(".popup__image");
+          let popupPrice = popup.querySelector(".prices__price");
+          let popupOldPrice = popup.querySelector(".prices__old-price");
+          popupTitle.textContent = `Портупея "${good.name}"`;
+          popupImage.src = good.img;
+          popupPrice.textContent = good.price;
+          if (popupOldPrice) {
+            popupOldPrice.textContent = good.oldPrice;
+          } else {
+            popupOldPrice.classList.add("prices__old-price--hidden");
+          }
         });
       });
     }
@@ -103,12 +120,22 @@ function createCard(good) {
   return card;
 }
 
+// Закрытие Попапа
+
 if (popup) {
   function closePopup() {
-    let popupButton = popup.querySelector(".popup__button");
-    popupButton.addEventListener("click", function() {
-      popup.classList.add("popup--hidden")
-    })
+    // let popupButton = popup.querySelector(".popup__button");
+    // popupButton.addEventListener("click", function () {
+    //   popup.classList.add("popup--hidden");
+    //   overlay.classList.add("overlay--hidden");
+    //   bodyScrollLock.enableBodyScroll(pageBody);
+    // });
+    let popupCloseButton = popup.querySelector(".popup__close-button");
+    popupCloseButton.addEventListener("click", function () {
+      popup.classList.add("popup--hidden");
+      overlay.classList.add("overlay--hidden");
+      bodyScrollLock.enableBodyScroll(pageBody);
+    });
   }
 }
 closePopup();
@@ -188,3 +215,126 @@ addSmoothScroll();
 if (document.querySelector("#select-1")) {
   const select1 = new CustomSelect("#select-1");
 }
+
+// Валидация формы
+
+function replacePhoneValue(el) {
+  var matrix = COUNTRY_CODE + " " + "(___) ___ __ __";
+  var def = matrix.replace(/\D/g, "");
+  var i = 0;
+  var val = el.value.replace(/\D/g, "");
+  if (def.length >= val.length) {
+    val = def;
+  }
+  el.value = matrix.replace(/./g, function (a) {
+    if (/[_\d]/.test(a) && i < val.length) {
+      return val.charAt(i++);
+    }
+    if (i >= val.length) {
+      return "";
+    } else {
+      return a;
+    }
+  });
+}
+
+function onInputPhoneInput(e) {
+  replacePhoneValue(e.target);
+}
+
+function onFocusPhoneInput(e) {
+  if (!e.target.value) {
+    e.target.value = COUNTRY_CODE;
+    e.target.addEventListener("input", onInputPhoneInput);
+    e.target.addEventListener("blur", onBlurPhoneInput);
+    e.target.addEventListener("keydown", onKeydownPhoneInput);
+  }
+}
+
+function onKeydownPhoneInput(e) {
+  if (
+    e.target.selectionStart <= length &&
+    e.keyCode !== 8 &&
+    e.keyCode !== 46
+  ) {
+    e.target.setSelectionRange(length, length);
+  }
+  if (
+    (e.target.selectionStart === length || e.target.selectionStart === 1) &&
+    e.keyCode === 8
+  ) {
+    e.preventDefault();
+  }
+  if (e.target.selectionStart === 1 && e.keyCode === 46) {
+    e.preventDefault();
+  }
+}
+
+function onBlurPhoneInput(e) {
+  if (e.target.value === COUNTRY_CODE) {
+    e.target.value = "";
+    e.target.removeEventListener("input", onInputPhoneInput);
+    e.target.removeEventListener("blur", onBlurPhoneInput);
+  }
+}
+
+function initPhoneMask() {
+  phoneInput.addEventListener("focus", onFocusPhoneInput);
+  if (phoneInput.value) {
+    replacePhoneValue(phoneInput);
+    phoneInput.addEventListener("input", onInputPhoneInput);
+    phoneInput.addEventListener("blur", onBlurPhoneInput);
+    phoneInput.addEventListener("keydown", onKeydownPhoneInput);
+  }
+}
+
+function validateInput(input, inputLength) {
+  var flag = true;
+  if (input.value.length < inputLength) {
+    flag = false;
+    input.classList.add("popup__input--has-error");
+  }
+  return flag;
+}
+
+function cleanInputs() {
+  nameInput.addEventListener("input", function () {
+    nameInput.classList.remove("popup__input--has-error");
+  });
+  phoneInput.addEventListener("input", function () {
+    phoneInput.classList.remove("popup__input--has-error");
+  });
+}
+
+function initFormValidate() {
+  if (!form) {
+    return;
+  }
+
+  form.noValidate = true;
+  cleanInputs();
+  initPhoneMask();
+  form.addEventListener("submit", function (e) {
+    validateInput(nameInput, NAME_LENGTH);
+    validateInput(phoneInput, PHONE_LENGTH);
+    e.preventDefault();
+    if (
+      validateInput(nameInput, NAME_LENGTH) &&
+      validateInput(phoneInput, PHONE_LENGTH)
+    ) {
+      popup.classList.add("popup--hidden");
+      overlay.classList.add("overlay--hidden");
+      bodyScrollLock.enableBodyScroll(pageBody);
+    }
+    if (
+      validateInput(nameInput, NAME_LENGTH) ||
+      validateInput(phoneInput, PHONE_LENGTH)
+    ) {
+      setTimeout(function () {
+        form.reset();
+      }, 500);
+    }
+  });
+}
+
+initFormValidate();

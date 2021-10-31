@@ -1,1 +1,12 @@
 // Файл миксинов
+@mixin vp--959 {
+  @media (max-width: $vp--960 - 1) {
+    @content;
+  }
+}
+
+@mixin vp--639 {
+  @media (max-width: $vp--640 - 1) {
+    @content;
+  }
+}

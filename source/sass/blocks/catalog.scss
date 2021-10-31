@@ -4,6 +4,17 @@
   margin: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
+  @include vp--959 {
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+
+  @include vp--639 {
+    grid-template-columns: auto;
+  }
 }
 
 .catalog--erotic p {
