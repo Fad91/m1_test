@@ -2,12 +2,25 @@
   width: 640px;
   display: flex;
   box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.3);
-  position: fixed;
+  position: absolute;
   z-index: 2;
   top: 85px;
-  left: 25%;
+  left: 50%;
+  transform: translate(-50%, 25%);
 
   &--hidden {
+    display: none;
+  }
+
+  @include vp--639 {
+    width: 320px;
+    left: 50%;
+    transform: translate(-50%, 25%);
+  }
+}
+
+.popup__image {
+  @include vp--639 {
     display: none;
   }
 }

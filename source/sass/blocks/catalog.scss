@@ -26,6 +26,10 @@
   font-size: 36px;
   line-height: 36px;
   text-transform: uppercase;
+
+  @include vp--639 {
+    font-size: 30px;
+  }
 }
 
 .catalog--inactive {
